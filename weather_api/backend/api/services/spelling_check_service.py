@@ -19,7 +19,7 @@ class SpellCheckerService:
         """Check whether the input is fully equal to any data"""
         city_names = [city.name for city in cities]
         for name in city_names:
-            if input_word.lower() == name.lower():
+            if input_word.lower() == name.lower() or input_word.lower() in name.lower():
                 return name
         return None
 
