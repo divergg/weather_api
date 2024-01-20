@@ -19,6 +19,11 @@ class WeatherDataService:
 
     def get_city_weather_data(self, city: City, lang_code: str = None) -> dict:
         """Receiving city weather data"""
+        params = {
+            "latitude": city.latitude,
+            "longitude": city.longitude,
+            "lang_code": lang_code
+        }
         update_time = city.last_requested_at
         now = datetime.datetime.now(tz=datetime.timezone.utc)
         delta = 30
@@ -29,12 +34,9 @@ class WeatherDataService:
                     "pressure": city.last_pressure,
                     "wind": city.last_wind,
                 }
+            else:
+                data = YandexIntegrationService().get_data_from_yandex_api(request_params=params)
         else:
-            params = {
-                "latitude": city.latitude,
-                "longitude": city.longitude,
-                "lang_code": lang_code
-            }
             data = YandexIntegrationService().get_data_from_yandex_api(request_params=params)
             error = data.get("error", None)
             if not error:
