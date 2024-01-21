@@ -91,7 +91,7 @@ DATABASES = {
         'NAME':  os.environ.setdefault(prefix + '_DB', 'postgres'),
         'USER': os.environ.setdefault(prefix + '_USER', 'postgres'),
         'PASSWORD': os.environ.setdefault(prefix + '_PASSWORD', 'postgres'),
-        'HOST': os.environ.setdefault(prefix + '_HOST', 'localhost'),
+        'HOST': os.environ.setdefault(prefix + '_HOST', 'database'),
         'PORT': os.environ.setdefault(prefix + '_PORT', '5432'),
         'OPTIONS': options,
         'dd': prefix + '_PORT'
