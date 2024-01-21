@@ -14,9 +14,12 @@ Backend is followed by the tests
 # Bot description
 Example of the bot execution in Russian
 ![pic1](https://github.com/divergg/weather_api/blob/master/weather_api/bot_example.png)
+
 Bot understands commands 'start', and 'Узнать погоду' (Get weather data)
 Any additional commands are responded with a fallback
+
 ![pic2](https://github.com/divergg/weather_api/blob/master/weather_api/fallback.png)
+
 The main part of the logic is executet on the backend
 
 # API description
